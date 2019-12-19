@@ -20,7 +20,7 @@ export class CodeAreaService {
     }, 1000);
     setTimeout(() => {
       this.json();
-    }, 100);
+    }, 60000);
   }
 
   private codesArea() {
@@ -112,14 +112,22 @@ export class CodeAreaService {
   }
 
   public json() {
-    // let jsonCodeArea = {};
-    // this.codesAreasArg.forEach((item) => {
-    //   jsonCodeArea[item.code] = {};
-    //   item.blocks.forEach((block) => {
-    //     jsonCodeArea[item.code][block.block] = true;
-    //   });
-    // });
-    console.log(all[11][7622]);
+    let jsonCodeArea = {};
+    this.codesAreasArg.forEach((item) => {
+      item.blocks.forEach((block) => {
+        jsonCodeArea[item.code + block.block] = true;
+      });
+    });
+    console.log(jsonCodeArea[3]);
+    console.log(jsonCodeArea[35]);
+    console.log(jsonCodeArea[352]);
+    console.log(jsonCodeArea[3525]);
+    console.log(jsonCodeArea[35256]);
+    console.log(jsonCodeArea[352561]);
+    console.log(jsonCodeArea[3525615]);
+    console.log(jsonCodeArea[35256159]);
+    console.log(jsonCodeArea[352561590]);
+    console.log(jsonCodeArea[3525615908]);
   }
 
   // public subStringPhone(value: string) {
