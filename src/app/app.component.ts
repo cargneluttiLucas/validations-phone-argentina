@@ -12,6 +12,5 @@ export class AppComponent implements OnInit {
   constructor(private service: CodeAreaService) {}
 
   ngOnInit() {
-    this.service.prueba();
   }
 }

@@ -1,11 +1,9 @@
+import { BlockArea } from './blockArea.model';
 
 export class CodeArea {
   code: string;
   state: string;
   description: string;
   mask: string;
-  blocks: [{
-    block: '',
-    codeAreaAndBlock: ''
-  }];
+  blocks = new Array<BlockArea>();
 }
