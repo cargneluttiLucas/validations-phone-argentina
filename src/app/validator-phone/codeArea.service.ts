@@ -19,8 +19,8 @@ export class CodeAreaService {
       this.bloques();
     }, 1000);
     setTimeout(() => {
-      this.json();
-    }, 60000);
+      this.validateInFile();
+    }, 100);
   }
 
   private codesArea() {
@@ -115,9 +115,11 @@ export class CodeAreaService {
     let jsonCodeArea = {};
     this.codesAreasArg.forEach((item) => {
       item.blocks.forEach((block) => {
-        jsonCodeArea[item.code + block.block] = true;
+        jsonCodeArea[item.code + block.block] = {};
+        jsonCodeArea[item.code + block.block][item.code] = true;
       });
     });
+    console.log(JSON.stringify(jsonCodeArea));
     console.log(jsonCodeArea[3]);
     console.log(jsonCodeArea[35]);
     console.log(jsonCodeArea[352]);
@@ -128,6 +130,13 @@ export class CodeAreaService {
     console.log(jsonCodeArea[35256159]);
     console.log(jsonCodeArea[352561590]);
     console.log(jsonCodeArea[3525615908]);
+  }
+
+
+  public validateInFile() {
+    console.log(all[3525615]);
+    // para obtener el codigo de area y poder ddesglosar el numero del codigo de area
+    console.log( Object.keys(all[3525615])[0]);
   }
 
   // public subStringPhone(value: string) {
